@@ -1,0 +1,66 @@
+<div class="pjjk-top-bar">
+  <div class="uk-container">
+    <div class="uk-float-right">
+      <a href="https://facebook.com/PiteaJujutsu" class="pjjk-social-link pjjk-facebook" uk-icon="icon:facebook; ratio: 2"></a>
+      &nbsp;
+      <a href="https://twitter.com/PiteaJujutsu" class="pjjk-social-link pjjk-twitter" uk-icon="icon:twitter; ratio: 2"></a>
+      &nbsp;
+      <a href="" class="pjjk-social-link pjjk-email" uk-icon="icon:mail; ratio: 2"></a>
+    </div>
+  </div>
+</div>
+
+<div class="pjjk-navbar">
+  <div class="uk-container">
+    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+        <div class="uk-navbar-left">
+          <a href="/"><object type="image/svg+xml" data="/images/logo-border-c.svg" class="pjjk-navbar-logo" height="150px" width="150px"></object></a>
+          <ul class="uk-navbar-nav pjjk-navbar-nav uk-light uk-text-center uk-visible@m">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+              {{ if .HasChildren }}
+              <li class="sub-menu{{if $currentPage.HasMenuCurrent "main" . }} active{{end}}">
+              <a href="javascript:;" class="">
+                  {{ .Pre }}
+                  <span>{{ .Name }}</span>
+                  <span class="menu-arrow arrow_carrot-right"></span>
+              </a>
+              <ul class="sub">
+                  {{ range .Children }}
+                  <li{{if $currentPage.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}"> {{ .Name }} </a> </li>
+                  {{ end }}
+              </ul>
+            {{else}}
+              <li>
+              <a href="{{.URL}}">{{ .Pre }}{{ .Name }}</a>
+            {{end}}
+            </li>
+            {{end}}
+          </ul>
+      </div>
+      <div class="uk-navbar-right uk-hidden@m">
+        <a href="#pjjk-overlay-menu" class="pjjk-menu-button" uk-icon="icon: menu; ratio: 2" uk-toggle></a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div id="pjjk-overlay-menu" uk-offcanvas>
+  <div class="uk-offcanvas-bar">
+    <ul class="uk-nav uk-nav-default">
+      <li class="uk-nav-header">Meny</li>
+      <li>
+        <a href="/tider/">Tider</a>
+      </li>
+      <li>
+        <a href="" class="">Medlem</a>
+      </li>
+      <li>
+        <a href="" class="">Om</a>
+      </li>
+      <li>
+        <a href="" class="">Kontakta</a>
+      </li>
+    </ul>
+  </div>
+</div>

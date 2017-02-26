@@ -1,0 +1,33 @@
+<footer class="uk-section uk-light uk-text-small pjjk-site-footer" uk-sticky="bottom: true">
+  <div class="uk-container">
+    <div class="uk-grid-divider uk-flex-center" uk-grid>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.footer }}
+      <div class="uk-width-1-6@m">
+        <ul class="uk-list">
+        {{ if .HasChildren }}
+          <li>
+            <a href="{{.URL}}"><strong>{{ .Pre }}{{ .Name }}</strong></a>
+          </li>
+          {{ range .Children }}
+            <li>
+              <a href="{{.URL}}">{{ .Pre }}{{ .Name }}</a>
+            </li>
+          {{ end }}
+        {{else}}
+          <li>
+            <a href="{{.URL}}"><strong>{{ .Pre }}{{ .Name }}</strong></a>
+          </li>
+        {{end}}
+        </ul>
+      </div>
+      {{end}}
+    </div>
+    <hr class="uk-divider-icon">
+    <div uk-grid>
+      <div class="uk-width-1-3 uk-text-left"><strong>Bankgiro</strong><br>448 - 7294</div>
+      <div class="uk-width-1-3 uk-text-center">&copy; 2017</div>
+      <div class="uk-width-1-3 uk-text-right"><strong>Telefon</strong><br>072 - 204 32 25</div>
+    </div>
+  </div>
+</footer>

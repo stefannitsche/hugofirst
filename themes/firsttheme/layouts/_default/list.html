@@ -1,0 +1,11 @@
+<!-- Note the lack of Go's context "dot" when defining blocks -->
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ range .Data.Pages }}
+  <h2>{{ .Title }}</h2>
+    <article>
+      {{ .Content }}
+    </article>
+  {{ end }}
+{{ end }}
