@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = "2017-02-23T20:39:37+01:00"
 title = "Om"
 +++

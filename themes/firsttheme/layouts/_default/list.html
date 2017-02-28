@@ -1,10 +1,11 @@
 <!-- Note the lack of Go's context "dot" when defining blocks -->
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
+  <h3>Detta är en ball lista!</h3>
   {{ .Content }}
   {{ range .Data.Pages }}
-  <h2>{{ .Title }}</h2>
     <article>
+      <h2>{{ .Title }}</h2>
       {{ .Content }}
     </article>
   {{ end }}
